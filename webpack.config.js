@@ -13,9 +13,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/i,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          "style-loader",
+          // "style-loader",
           MiniCssExtractPlugin.loader,
           "css-loader",
           "sass-loader",
@@ -30,7 +30,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "src/index.html" }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({ filename: "style.css" }),
   ],
   devServer: {
     port: 9000,
